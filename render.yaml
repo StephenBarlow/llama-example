@@ -9,6 +9,9 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 20
+      - key: NEXT_PUBLIC_CHAT_API
+        sync: false
+
   - type: web
     name: llama-backend
     plan: starter
@@ -18,16 +21,15 @@ services:
     buildCommand: poetry install
     startCommand: uvicorn main:app
     envVars:
-      - key: OPENAI_API_KEY
-        value: $OPENAI_API_KEY # Set this!
       - key: PYTHON_VERSION
         value: 3.11.5
       - key: POETRY_VERSION
         value: 1.7.1
       - key: ENVIRONMENT
         value: prod
+      - key: PORT
+        value: 8000
       - key: PROD_CORS_ORIGIN
-        fromService:
-          name: llama-frontend
-          type: web
-          property: host
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
