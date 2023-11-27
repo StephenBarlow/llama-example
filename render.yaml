@@ -14,7 +14,7 @@ services:
 
   - type: web
     name: llama-backend
-    plan: starter
+    plan: free
     runtime: python
     repo: https://github.com/StephenBarlow/llama-example.git
     rootDir: backend
