@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: llama-frontend
+    runtime: static
+    repo: https://github.com/StephenBarlow/llama-example.git
+    rootDir: frontend
+    buildCommand: npm install; npm run build
+    staticPublishPath: frontend/out
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+  - type: web
+    name: llama-backend
+    plan: starter
+    runtime: python
+    repo: https://github.com/StephenBarlow/llama-example.git
+    rootDir: backend
+    buildCommand: poetry install
+    startCommand: uvicorn main:app
+    envVars:
+      - key: OPENAI_API_KEY
+        value: $OPENAI_API_KEY # Set this!
+      - key: ENVIRONMENT
+        value: prod
+      - key: PROD_CORS_ORIGIN
+        fromService:
+          name: llama-frontend
+          type: web
+          property: host
