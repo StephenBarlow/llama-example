@@ -5,7 +5,7 @@ services:
     repo: https://github.com/StephenBarlow/llama-example.git
     rootDir: frontend
     buildCommand: npm install; npm run build
-    staticPublishPath: frontend/out
+    staticPublishPath: out
     envVars:
       - key: NODE_VERSION
         value: 20
