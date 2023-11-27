@@ -20,6 +20,8 @@ services:
     envVars:
       - key: OPENAI_API_KEY
         value: $OPENAI_API_KEY # Set this!
+      - key: POETRY_VERSION
+        value: 1.7.1
       - key: ENVIRONMENT
         value: prod
       - key: PROD_CORS_ORIGIN
