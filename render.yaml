@@ -21,7 +21,7 @@ services:
       - key: OPENAI_API_KEY
         value: $OPENAI_API_KEY # Set this!
       - key: PYTHON_VERSION
-        value: 3.11
+        value: 3.11.5
       - key: POETRY_VERSION
         value: 1.7.1
       - key: ENVIRONMENT
