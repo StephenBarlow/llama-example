@@ -2,7 +2,7 @@ This is a [LlamaIndex](https://www.llamaindex.ai/) project using [Next.js](https
 
 ## Getting Started
 
-First, install the dependencies:
+First, install dependencies:
 
 ```
 npm install
