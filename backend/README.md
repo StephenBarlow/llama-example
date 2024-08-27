@@ -2,7 +2,7 @@ This is a [LlamaIndex](https://www.llamaindex.ai/) project using [FastAPI](https
 
 ## Getting Started
 
-First, setup the environment:
+First, set up the environment:
 
 ```
 poetry install
